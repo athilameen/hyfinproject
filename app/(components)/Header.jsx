@@ -159,7 +159,7 @@ const HeaderArea = async () => {
                   width={212}
                   height={90}
                 />
-                <span>Let's Create, Let's Build</span>
+                <span>Lets Create, Lets Build</span>
               </Link>
             </div>
 
