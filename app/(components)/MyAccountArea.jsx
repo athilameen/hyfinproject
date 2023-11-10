@@ -1,7 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import LoginFormArea from "./LoginForm";
+import LoginFormArea from "./LoginFormArea";
 import DashboardArea from "./Dashboard";
 
 const MyAccountArea = (props) => {
