@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import SubHeader from "../(components)/Subheader";
-import LoginForm from "../(components)/Loginform";
+import MyAccountArea from "../(components)/MyAccountArea";
 
 export const metadata = {
   title: "My Account | Find the right business partners",
@@ -9,16 +9,15 @@ export const metadata = {
 };
 
 const MyAccountPage = (props) => {
+
+
   return (
     <Fragment>
       <SubHeader pagetitle="My Account" />
-      
       <section className="contact-pg-sec">
         <div className="myContainer">
           <div className="row">
-            <div className="page-template-myaccount left">
-              <LoginForm />
-            </div>
+            <MyAccountArea />
           </div>
         </div>
       </section>

@@ -85,6 +85,9 @@ body{
   background-color: #1C1F48;
   padding-bottom: 30px;
 }
+#form.dashboardArea{
+  border-radius: 40px;
+}
 #form .loading{
   width: 40px;
   height: 40px;
@@ -374,17 +377,17 @@ a.frm_logout_link:hover {
   margin: 20px auto 0;
   height: auto;
 }
-.page-template-registration .left{
+.user-registration-account.left{
   max-width: 50%;
   width: 50%;
   margin: 0px auto;
   height: auto;
 }
-.logged-in.user-registration-account .left{
+.user-registration-account.left{
   max-width: 90%;
   width: 90%;
 }
-.logged-in.user-registration-account #form{
+.user-registration-account #form{
   border-radius: 40px;
 }
 #user-registration{
@@ -422,6 +425,7 @@ a.frm_logout_link:hover {
   font-family: sans-serif;
   font-size: 14px;
   display: block;
+  cursor: pointer;
 }
 #user-registration.horizontal .user-registration-MyAccount-navigation ul .user-registration-MyAccount-navigation-link a:hover{
   color: #FFFFFF;
@@ -499,6 +503,7 @@ a.frm_logout_link:hover {
 #user-registration .user-registration-MyAccount-content a{
   color: #FFD139;
   font-weight: 600;
+  cursor: pointer;
 }
 #user-registration .user-registration-MyAccount-content a:hover{
   text-decoration: underline;
@@ -527,6 +532,9 @@ a.frm_logout_link:hover {
   color: #FFD23B;
 }
 .user-registration-edit-password #user-registration .ur-frontend-form, .user-registration-edit-profile #user-registration .ur-frontend-form{
+  min-width: 50%;
+}
+#ur-frontend-form.ur-frontend-form.login{
   min-width: 50%;
 }
 #form #user-registration .user-registration-MyAccount-content .user-registration-profile-header .user-registration-img-container{

@@ -62,6 +62,7 @@ const BusinessRegisterForm = () => {
             [name]: value,
         }))
     }
+    
 
   return (
     <section className="contact-pg-sec">
@@ -175,6 +176,7 @@ const BusinessRegisterForm = () => {
       </div>
     </section>
   );
+
 };
 
 export default BusinessRegisterForm;
