@@ -185,7 +185,7 @@ const HeaderArea = async () => {
                         <Link href="/">Super Admin</Link>
                       </li>
                       <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-80">
-                        <Link href="/contact-us">Conatact Us</Link>
+                        <Link href="/contact-us">Contact Us</Link>
                       </li>
                       <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-525">
                          <Link href="/about">About Us</Link>

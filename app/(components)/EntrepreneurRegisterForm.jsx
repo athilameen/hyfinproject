@@ -13,31 +13,43 @@ const EntrepreneurRegisterForm = () => {
     const busRegisterFormhandler = async (e) => {
         e.preventDefault();
 
+        const { name, email, password } = formData;
+        if (!name || !email || !password) {
+          setErrorMessage("All fields are necessary.");
+          return;
+        }
+
         setSuccesMessage('');
         setErrorMessage('');
         setIsLoading(true);
-      
-        const res = await fetch("/api/users/", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-            "Content-Type": "application/json",
-        },
-        });
 
-        e.target.reset();
+        try {
 
-        if(res.ok){
-            setIsLoading(false);
-            const data = await res.json();
-            setSuccesMessage(data.message);
-        } else {
-            setIsLoading(false);
-            setErrorMessage('Somthing Wrong!');
-            const data = await res.json();
-            if(data.message !== ""){
-                setErrorMessage(data.message);
-            }
+          const res = await fetch("/api/users/", {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+              "Content-Type": "application/json",
+          },
+          });
+
+          e.target.reset();
+
+          if(res.ok){
+              setIsLoading(false);
+              const data = await res.json();
+              setSuccesMessage(data.message);
+          } else {
+              setIsLoading(false);
+              setErrorMessage('Somthing Wrong!');
+              const data = await res.json();
+              if(data.message !== ""){
+                  setErrorMessage(data.message);
+              }
+          }
+
+        } catch (error) {
+          setErrorMessage("Error during registration");
         }
 
     };

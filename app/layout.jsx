@@ -5,6 +5,7 @@ import '@/app/assets/styles/main.css';
 import '@/app/assets/styles/home.css';
 import '@/app/assets/styles/all.min.css';
 import '@/app/assets/styles/form.css';
+import { AuthProvider } from './Provider';
 
 export const metadata = {
   title: 'The Hyfin | Find the right business partners',
@@ -15,10 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <HeaderArea />
-        <main className="p-0">
-          {children}
-        </main>
+        <AuthProvider>
+          <HeaderArea />
+          <main className="p-0">
+            {children}
+          </main>
+        </AuthProvider>
       </body>
     </html>
   )

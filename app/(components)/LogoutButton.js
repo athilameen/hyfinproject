@@ -8,8 +8,7 @@ const LogoutButton = () => {
     const router = useRouter();
 
     function logouthandler(){
-      signOut();
-      router.replace('/');
+      signOut({callbackUrl: '/my-account'})
     }
 
   return (

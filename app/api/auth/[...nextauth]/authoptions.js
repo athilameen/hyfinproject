@@ -9,18 +9,7 @@ export const authOptions = {
       CredentialsProvider({
         name: "credentials",
         credentials: {},
-        /*credentials : {
-          email : {
-            label: "Email",
-            type: "text",
-            placeholder: "Your Email",
-          },
-          password : {
-            label: "Pasword",
-            type: "password",
-            placeholder: "Your Password",
-          },
-        },*/
+       
         async authorize(credentials){
   
             try{
@@ -45,7 +34,7 @@ export const authOptions = {
                 if(match){
                   console.log('Good Pass');
                   delete foundUser.password;
-                  foundUser['role'] = 'Unveried Email';
+                  foundUser['role'] = 'subscriber';
                   client.close();
                   return foundUser;
                 }
@@ -69,5 +58,8 @@ export const authOptions = {
           if(session?.user) session.user.role = token.role;
           return session;
       }
-    }
+    },
+    pages: {
+      signIn: "/my-account",
+    },
   };

@@ -12,22 +12,12 @@ const MyAccountPage = (props) => {
   return (
     <Fragment>
       <SubHeader pagetitle="My Account" />
+      
       <section className="contact-pg-sec">
         <div className="myContainer">
           <div className="row">
             <div className="page-template-myaccount left">
-              <div id="form">
-                <div className="frm_forms frm_style_formidable-style frm_login_form">
-                  <div id="user-registration" className="user-registration">
-                    <div
-                      className="ur-frontend-form login"
-                      id="ur-frontend-form"
-                    >
-                      <LoginForm />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <LoginForm />
             </div>
           </div>
         </div>
@@ -37,3 +27,4 @@ const MyAccountPage = (props) => {
 };
 
 export default MyAccountPage;
+
