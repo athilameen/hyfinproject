@@ -2,7 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import LoginFormArea from "./LoginFormArea";
-import DashboardArea from "./Dashboard";
+import DashboardArea from "./DashboardArea";
 
 const MyAccountArea = (props) => {
   const session = useSession();

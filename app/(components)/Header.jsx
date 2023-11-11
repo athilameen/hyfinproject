@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/authoptions";
 import LogoutButton from "./LogoutButton";
+import { useSession } from "next-auth/react";
 
-const HeaderArea = async () => {
+const HeaderArea = () => {
 
-  const session = await getServerSession(authOptions);
+  const getSession = useSession();
+  let session = "";
+  if(getSession.status === "authenticated"){
+    session = getSession.data;
+  }
 
   return (
     <header id="header" className="header-bg">

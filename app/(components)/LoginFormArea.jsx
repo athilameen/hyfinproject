@@ -6,8 +6,6 @@ import { useRouter } from "next/navigation";
 
 const LoginFormArea = () => {
 
-  const router = useRouter();
-
   const [formData, setFormData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowpassword] = useState('password');
@@ -47,8 +45,6 @@ const LoginFormArea = () => {
         setErrorMessage("Invalid Credentials");
         setIsLoading(false);
         return;
-      } else {
-        window.location.replace(window.location.href);
       }
 
       setIsLoading(false);
