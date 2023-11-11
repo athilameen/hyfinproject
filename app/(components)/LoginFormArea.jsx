@@ -1,14 +1,12 @@
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-
 
 const LoginFormArea = () => {
 
   const [formData, setFormData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [showPassword, setShowpassword] = useState('password');
+  const [showPassword, setShowPassword] = useState('password');
   const [errorMessage, setErrorMessage] = useState();
 
   function inputChangeHandler(e) {
@@ -22,9 +20,9 @@ const LoginFormArea = () => {
 
   function showPasswordHandler(e){
     if(showPassword === "password"){
-        setShowpassword('text');
+        setShowPassword('text');
     } else {
-        setShowpassword('password');
+        setShowPassword('password');
     }
   }
 
