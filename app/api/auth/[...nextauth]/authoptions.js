@@ -22,24 +22,19 @@ export const authOptions = {
                 email: credentials.email,
               });
   
-              
               if(foundUser){
-  
-                console.log('User Exists');
-                const match = await bcrypt.compare(
+                  const match = await bcrypt.compare(
                   credentials.password,
                   foundUser.password
                 );
                 
                 if(match){
-                  console.log('Good Pass');
                   delete foundUser.password;
-                  foundUser['role'] = 'subscriber';
                   client.close();
                   return foundUser;
                 }
-  
               }
+
             } catch (error){
               console.log(error);
             }

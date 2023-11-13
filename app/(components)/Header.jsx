@@ -180,20 +180,17 @@ const HeaderArea = () => {
                     className=" navbar-collapse show"
                   >
                     <ul id="menu-header-menu-1" className="top-bar">
+                      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-525">
+                         <Link href="/about">About Us</Link>
+                      </li>
                       <li className="megaDropMenu menu-item menu-item-type-post_type menu-item-object-page menu-item-272">
                         <Link href="/business-registration">Business Registration</Link>
                       </li>
                       <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1146">
                         <Link href="/entrepreneur-registration">Entrepreneur Registration</Link>
                       </li>
-                      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1104">
-                        <Link href="/">Super Admin</Link>
-                      </li>
                       <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-80">
                         <Link href="/contact-us">Contact Us</Link>
-                      </li>
-                      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-525">
-                         <Link href="/about">About Us</Link>
                       </li>
                       { session && <li className="menu-item menu-item-type-post_type menu-item-object-page">
                         <LogoutButton />
@@ -205,7 +202,7 @@ const HeaderArea = () => {
             </div>
             { session ? (
               <div className="account accountLogged">
-                <Link href='/my-account' className="login-link">My Account</Link>
+                <Link href={session?.user.role === "admin" ? '/super-admin' : '/my-account'} className="login-link">My Account</Link>
                 <div className="signInTop"><span className="signin">{session?.user?.name}, <span>you are logged in!</span></span></div>
               </div>
             ) : (
